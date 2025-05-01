@@ -8,20 +8,18 @@
   </head>
     <body>
     <a-scene>
-      <a-sky color="lightblue"></a-sky>
+      <a-sky src="skydome.jpg"></a-sky>
+
+      <a-entity id="rig"position=" 24 2 -2" rotation="2 90 0">
+      <a-entity camera=""  wasd-controls=""  look-controls="" aframe-injected="" data-aframe-inspector-original-camera=""></a-entity>
+      </a-entity>
+
+      <a-entity id="den0" ply-model="src:den0.ply" position="0 0 -2" rotation="-90 0 90"></a-entity>
+      <a-entity id="grass" ply-model="src:newgrass.ply" rotation="-90 90 0" position="0.02 0 -2"></a-entity>
+      <a-entity id="cave" ply-model="src:cave.ply" rotation="-90 90 0" position="-4.7 0 -2"></a-entity>
+
+      <a-entity id="sword" ply-model="src: sword2.ply" rotation="-90 -110.75560658776378 0" scale="0.7 0.7 0.8" position="-8.036 -0.4139 -6.59202"></a-entity>
       
-       <!-- Put this inside the <a-scene> -->
-      <a-entity id="den0"
-      ply-model="src:den0.ply"
-      position="0 0 -2"
-      rotation="-90 0 90"
-      ></a-entity>
-      <a-entity id="den1"
-      ply-model="src:den1.ply"
-      position="0 0 -2"
-      rotation="-90 0 90"
-      ></a-entity>
-      <a-entity camera="" position="26.447923903843645 2.2 -2.3581288458616134" wasd-controls="" rotation="-8.708958485988521 88.80845824527762 0" look-controls="" aframe-injected="" data-aframe-inspector-original-camera=""></a-entity>
 
       <a-entity id="tree2-3" ply-model="src: tree2.ply" position="23.1136 0 -6.9515" rotation="-89.99963750135457 149.85539244308143 0"></a-entity>
       <a-entity id="tree1-2" ply-model="src: tree1.ply" position="17.65124 0 -10.00683" rotation="-90.00021045914971 -1.131018687588245 0"></a-entity>
@@ -34,7 +32,31 @@
       <a-entity id="sign1" ply-model="src: sign1.ply" rotation="-89.99963750135457 101.57624975197287 0" scale="0.7 0.7 0.7" position="18 0.3 0"></a-entity>
       <a-entity id="sign2" ply-model="src: sign2.ply" rotation="-90 75.15430102951495 0" scale="0.7 0.7 0.7" position="15.042 -0.31599 -4.94381"></a-entity>
 
-      <a-entity id="nest" ply-model="src: nest.ply" rotation="-90 0 0" scale="0.97 1 1" position="-16.712 0.37752 -2.90079"></a-entity>
+      <a-entity id="nest" ply-model="src: nest.ply" rotation="-90 0 0" scale="0.97 1 1" position="-16.712 0.10325 -2.90079"></a-entity>
+      <a-entity id="egg" ply-model="src: egg.ply" rotation="-90 0 0" scale="0.7 0.7 0.7" position="-16.6762 0 -2.7213"
+      animation="
+      easing:easeInExpo;
+      property: position;
+      from: -16.6762 0 -2.7213;
+      to: -16.6762 1.2 -2.7213;
+      dur: 2000;
+      loop: true;
+      dir:alternate
+       "
+       ></a-entity>
+       <!-- thanks to ALexis KB Sounds https://www.youtube.com/watch?v=upNXbO47tzc for hatching sound-->
+
+       <a-entity id="flypath" position="-1 2 -1.5"
+       animation="property: rotation;
+       from: 0 0 0;
+       to: 0 360 0;
+       loop:true;
+       dur: 4000;
+       easing: linear;">
+       <a-entity ply-model="src:dragon.ply" rotation=" -90 0 0" position="0 10 10" sound="src:flyingsound.mp3; loop:true; autoplay:true" ></a-entity>
+       </a-entity>
+       <!--wholy freak these models hate me.-->
+       <!-- credit to world of sounds for the flying sound https://www.youtube.com/watch?v=_OFnWYRaaEs-->
     </a-scene>
   </body>
 </html>
